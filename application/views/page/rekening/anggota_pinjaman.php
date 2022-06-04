@@ -41,7 +41,8 @@
                                   </thead>
                                   <tbody>
                                     <?php $start = 1;
-                                    foreach ($pinjaman as $s) {?>
+                                    foreach ($pinjaman as $s) { ?>
+                                      <?php if ($s->approval == 1 || $s->tenor == $s->ke): ?>
                                       <tr>
                                         <td><?= $start++; ?></td>
                                         <td><?= $s->kode; ?></td>
@@ -50,8 +51,6 @@
                                         <td><?= $s->tenor.' Bulan'; ?></td>
                                         <td><?= $this->conv->convRupiah($s->margin); ?></td>
                                         <td><?= $this->conv->convRupiah($s->pokok); ?></td>
-                                        <!-- <td><?= $this->conv->convRupiah($s->sisa_angsuran); ?></td> -->
-                                        <!-- <td><?= $this->conv->convRupiah($s->margin+$s->pokok); ?></td> -->
                                         <td><?= $s->tgl_pengajuan; ?></td>
                                         <?php if ($s->tenor == $s->ke) { ?>
                                           <td><a class="btn btn-outline-success waves-effect"> Telah Lunas </a></td>
@@ -62,12 +61,12 @@
                                           </td>
                                         <?php }else { ?>
                                           <td>
-                                            <a class="btn btn-outline-danger waves-effect"> Ditolak</a>
-                                          </td>  
+                                            <a class="btn btn-outline-warning waves-effect"> Menunggu persetujuan manager</a>
+                                          </td>
                                         <?php }?>
-
                                       </tr>
 
+                                  <?php endif; ?>
                                     <?php } ?>
                                   </tbody>
                                   </table>

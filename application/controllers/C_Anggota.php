@@ -18,9 +18,6 @@ class C_Anggota extends CI_Controller{
 
   public function index()
   {
-
-    var_dump($this->session->userdata());
-    die();
     $load = $this->mv->master_view_anggota_all();
 
     $data = array(

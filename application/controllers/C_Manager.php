@@ -34,19 +34,16 @@ class C_Manager extends CI_Controller{
 
   function persetujuan_pinjaman($kode_pinjaman)
     {
-      $approv = $this->mc->setujui_approval($kode_pinjaman);
-       var_dump($approv);
-       die();
-       $this->session->set_flashdata('msg', '<div class="alert alert-success">Data Nasabah sudah disetujui oleh Manajer.</div>');
+      $approv = $this->mf->s_approval($kode_pinjaman);
+       $this->session->set_flashdata('msg', '<div class="alert alert-success">Data Nasabah sudah disetujui .</div>');
        redirect('C_Manager');
     }
 
   //
   function tolak_pinjaman($kode_pinjaman)
   {
-    $sql = "UPDATE tb_pinjaman SET sts_approval = 2 WHERE kode_pinjaman='{$kode_pinjaman}'";
-     $query_sql = $this->db->query($sql);
-     $this->session->set_flashdata('msg', '<div class="alert alert-success">Data Nasabah sudah ditolak oleh Manajer.</div>');
+     $approv = $this->mf->t_approval($kode_pinjaman);
+     $this->session->set_flashdata('msg', '<div class="alert alert-success">Data Nasabah sudah ditolak .</div>');
      redirect('C_Manager');
   }
 }

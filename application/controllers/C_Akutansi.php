@@ -280,12 +280,16 @@ class C_Akutansi extends CI_Controller{
         $brangkas['total_hutang'] = $d_hutang+$plafon;
         $brangkas['last_update'] = $last_update;
         $brangkas['kas'] = ($d_kas - $plafon) + $total_gotongroyong ;
+        if ($approval == 3) {
+          $this->mc->insert_pinjaman($pinjaman);
+          redirect('C_Akutansi/respon_manager');
+          $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show">Berhasil melakukan pinjaman, <a class="btn btn-info waves-effect waves-light" href="'.base_url('cetak/pinjaman/').$kode_pinjaman.'" target="_blank"> Download Invoice</a> </div>');
 
-        $this->mu->update_brangkas($brangkas);
-        $this->mc->update_dagoro($no_rekening, $rekening);
-        $this->mc->insert_pinjaman($pinjaman);
-        // $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show">Berhasil melakukan pinjaman, <a class="btn btn-info waves-effect waves-light" href="'.base_url('cetak/pinjaman/').$kode_pinjaman.'" target="_blank"> Download Invoice</a> </div>');
-        redirect('C_Akutansi/respon_manager');
+        }else {
+          $this->mu->update_brangkas($brangkas);
+          $this->mc->update_dagoro($no_rekening, $rekening);
+          redirect ();
+        }
       }
     }
       function respon_manager()

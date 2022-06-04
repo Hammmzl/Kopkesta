@@ -20,7 +20,7 @@ class Home extends CI_Controller{
   {
     $load = $this->amf->notif_pinjaman();
     $data = array(
-        'js'  => 'charts',
+        'js'  => 'notif',
         'title' => 'Dashboard',
         'notif' => $load,
         'jumlah_instansi' => $this->amf->jumlah_instansi(),

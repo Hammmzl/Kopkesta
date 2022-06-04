@@ -109,17 +109,26 @@ class M_function extends CI_Model{
   }
 
 
-function notif_pinjaman()
-{
-  $this->db->where('approval', 3);
-  $this->db->order_by('tanggal_pengajuan', 'DESC');
-  return $this->db->get('tb_pinjaman')->result();
-}
-//   $sql_all_pinjaman =  "SELECT * FROM response_manajer WHERE status_approval='1' ORDER BY tgl_transaksi DESC";
-// $query_all_pinjaman = $this->db->query($sql_all_pinjaman);
-// $result_pinjaman = $query_all_pinjaman->result();
+  function notif_pinjaman()
+  {
+    $this->db->where('approval', 3);
+    $this->db->order_by('tanggal_pengajuan', 'DESC');
+    return $this->db->get('tb_pinjaman')->result();
+  }
 
+  function s_approval($kode_pinjaman)
+  {
+    $this->db->where('kode_pinjaman', $kode_pinjaman);
+    $this->db->set('approval', '1');
+    $this->db->update('tb_pinjaman');
+  }
 
+  function t_approval($kode_pinjaman)
+  {
+    $this->db->where('kode_pinjaman', $kode_pinjaman);
+    $this->db->set('approval', '2');
+    $this->db->update('tb_pinjaman');
+  }
 
   function get_pinjaman_kode($kode_pinjaman)
   {

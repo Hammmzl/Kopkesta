@@ -47,13 +47,6 @@ class M_create extends CI_Model{
      return $this->db->insert('tb_pinjaman', $pinjaman);
   }
 
-  function setujui_approval($kode_pinjaman)
-  {
-    $this->db->where('approval', $approval);
-    $this->db->set('approval', 1);
-    $this->db->update('tb_pinjaman', $data);
-  }
-
   function insert_angsuran($data)
   {
      return $this->db->insert('tb_angsuran', $data);

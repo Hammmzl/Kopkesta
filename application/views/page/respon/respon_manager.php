@@ -50,7 +50,7 @@
                                         <td><?= $s->tgl_pengajuan; ?></td>
                                         <?php if ($s->approval == 1) { ?>
                                           <td>
-                                            <a href="<?= base_url('tambah_pinjaman/').$s->no_rekening ?>" class="btn btn-outline-dark waves-effect">Sudah Disetujui Manajer</a>
+                                            <a class="btn btn-outline-dark waves-effect">Sudah Disetujui Manajer</a>
                                           </td>
                                         <?php }elseif ($s->approval == 2) { ?>
                                           <td>

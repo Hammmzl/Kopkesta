@@ -49,6 +49,7 @@
                     <i class="ri-fullscreen-line"></i>
                 </button>
             </div>
+            <?php if ($js == 'notif') { ?>
             <?php
               if ($this->session->userdata('id_lvl') == 1) {?>
             <div class="dropdown d-inline-block">
@@ -91,13 +92,14 @@
                   <?php } ?>
                     <div class="p-2 border-top">
                         <div class="d-grid">
-                            <a class="btn btn-sm btn-link font-size-14 text-center" href="javascript:void(0)">
-                                <i class="mdi mdi-arrow-right-circle me-1"></i> View More..
+                            <a href="<?= base_url('C_Manager'); ?>" class="btn btn-sm btn-link font-size-14 text-center" href="javascript:void(0)">
+                                <i  class="mdi mdi-arrow-right-circle me-1"></i> View More..
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
+            <?php } ?>
             <?php } ?>
             <div class="dropdown d-inline-block user-dropdown">
                 <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
