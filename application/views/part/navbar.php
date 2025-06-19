@@ -2,6 +2,7 @@
     <div data-simplebar class="h-100">
         <div id="sidebar-menu">
             <ul class="metismenu list-unstyled" id="side-menu">
+              <?php if ($this->session->userdata('id_lvl') == 1 || $this->session->userdata('id_lvl') == 2) { ?>
               <li>
                 <a href="<?= base_url('dashboard'); ?>" class="waves-effect">
                   <i class="mdi mdi-home-variant-outline"></i>
@@ -29,7 +30,8 @@
                       <li><a href="<?=base_url('tambah_instansi'); ?>"> Tambah Instansi Baru</a></li>
                     </ul>
                 </li>
-                <?php if ($this->session->userdata('id_lvl') == 3) { ?>
+              <?php } ?>
+                <?php if ($this->session->userdata('id_lvl') == 2) { ?>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="mdi mdi-safe"></i>

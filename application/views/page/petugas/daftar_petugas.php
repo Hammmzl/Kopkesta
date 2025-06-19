@@ -46,7 +46,6 @@
                                               <select class="form-control" name="level" required >
                                                   <option default >--Pilih--</option>
                                                   <option value="manajer">Manager</option>
-                                                  <option value="pembiayaan">Pembiayaan</option>
                                                   <option value="teller">Teller</option>
                                               </select>
                                           </div>

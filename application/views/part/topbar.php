@@ -106,10 +106,13 @@
                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <img class="rounded-circle header-profile-user" src="<?= base_url(); ?>assets/images/users/avatar-2.jpg"
                         alt="Header Avatar">
-                    <span class="d-none d-xl-inline-block ms-1">Kevin</span>
+                    <span class="d-none d-xl-inline-block ms-1"><?= $this->session->userdata('user'); ?></span>
                     <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                 </button>
                 <div class="dropdown-menu dropdown-menu-end">
+                  <a class="dropdown-item" href="#"><i class="ri-user-line align-middle me-1"></i><?= $this->session->userdata('lvl'); ?></a>
+                  <a class="dropdown-item" href="<?= base_url('C_Admin'); ?>"><i class="mdi mdi-account-cog align-middle me-1"></i>Data Petugas</a>
+                  <div class="dropdown-divider"></div>
                     <a class="dropdown-item text-danger" href="<?= base_url('C_Auth/logout') ?>"><i class="ri-shut-down-line align-middle me-1 text-danger"></i> Logout</a>
                 </div>
             </div>

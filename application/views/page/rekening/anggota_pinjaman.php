@@ -31,9 +31,6 @@
                                         <th>Masa Pinjaman</th>
                                         <th>Margin</th>
                                         <th>Pokok </th>
-                                        <!-- <th>Angsuran Perbulan </th> -->
-                                        <!-- <th>Sisa Angsuran Pokok</th> -->
-                                        <!-- <th>Angsur Per Bulan</th> -->
                                         <th>Tanggal Pengajuan</th>
                                         <th>Opsi</th>
 

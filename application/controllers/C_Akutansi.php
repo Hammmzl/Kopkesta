@@ -38,16 +38,6 @@ class C_Akutansi extends CI_Controller{
       $this->dana_lainya        = $lb->dana_lainya;
       $this->total_hutang       = $lb->total_hutang;
       $this->total_piutang      = $lb->total_piutang;
-      $this->jasa_usaha         = $lb->jasa_usaha;
-      $this->jasa_simpanan      = $lb->jasa_simpanan;
-      $this->dana_cadangan      = $lb->dana_cadangan;
-      $this->dana_pengurus      = $lb->dana_pengurus;
-      $this->dana_pendidikan    = $lb->dana_pendidikan;
-      $this->dana_kes_pegawai   = $lb->dana_kes_pegawai;
-      $this->dana_sosial        = $lb->dana_sosial;
-      $this->dana_audit         = $lb->dana_audit;
-      $this->dana_pembangunan   = $lb->dana_pembangunan;
-      $this->dana_penghapusan   = $lb->dana_penghapusan;
       return;
     }
 

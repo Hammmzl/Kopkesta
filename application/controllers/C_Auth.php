@@ -41,22 +41,13 @@ class C_Auth extends CI_Controller{
         redirect('Home');
 
       }
-      elseif ($data['level'] == 'pembiayaan') {
-        $this->session->set_userdata('masuk', TRUE);
-        $this->session->set_userdata('user', $data['nama']);
-        $this->session->set_userdata('username', $data['username']);
-        $this->session->set_userdata('password', $data['pass']);
-        $this->session->set_userdata('lvl', 'Pembiayaan');
-        $this->session->set_userdata('id_lvl', '2');
-        redirect('Home');
-      }
       elseif ($data['level'] == 'teller') {
         $this->session->set_userdata('masuk', TRUE);
         $this->session->set_userdata('user', $data['nama']);
         $this->session->set_userdata('username', $data['username']);
         $this->session->set_userdata('password', $data['pass']);
         $this->session->set_userdata('lvl', 'Teller');
-        $this->session->set_userdata('id_lvl', '3');
+        $this->session->set_userdata('id_lvl', '2');
         redirect('Home');
       }
 

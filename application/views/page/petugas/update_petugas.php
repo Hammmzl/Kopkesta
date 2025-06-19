@@ -51,9 +51,6 @@
                                                 if ($level == 'manajer') {
                                                   echo "Manajer";
                                                 }
-                                                elseif ($level == 'pembiayaan') {
-                                                  echo "Pembiayaan";
-                                                }
                                                 elseif ($level == 'teller') {
                                                   echo "Teller";
                                                 }
@@ -66,14 +63,10 @@
                                                     <select class="form-control" name="level" value="<?= $level ?>"  required>
                                                     <option default>-- Pilih --</option>
                                                     <option value="manajer">Manager</option>
-                                                    <option value="pembiayaan">Pembiayaan</option>
                                                     <option value="teller">Teller</option>
                                                     <option selected value="<?= $level; ?>"><?php
                                                     if ($level == 'manajer') {
                                                       echo "Manajer";
-                                                    }
-                                                    elseif ($level == 'pembiayaan') {
-                                                      echo "Pembiayaan";
                                                     }
                                                     elseif ($level == 'teller') {
                                                       echo "Teller";
